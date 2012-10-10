@@ -1,13 +1,15 @@
 ## sample code to test finding the absolute path to a shared library across platforms
 
+## Requires gyp to build
+
+    sudo pip install gyp
 
 ## Build
 
-On Unix/Mac
+On Unix/Mac:
 
 	make
 	test
-
 
 Should print:
 
@@ -19,3 +21,7 @@ hello
 hello
 /Users/dane/projects/dlpath/libmylib.dylib
 ```
+
+Other platforms: Need help testing
+
+For windows and gyp see: https://github.com/springmeyer/hello-gyp
