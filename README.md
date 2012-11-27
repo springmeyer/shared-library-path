@@ -9,9 +9,9 @@
 On Unix/Mac:
 
 	make
-	test
+	make test
 
-Should print:
+Should print something like:
 
 ```
 hello
