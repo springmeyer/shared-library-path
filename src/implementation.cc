@@ -53,7 +53,7 @@ std::string get_lib_dir(const char *library_name, void *MainAddr)
     char link_path[MAXPATHLEN];
     if (realpath(DLInfo.dli_fname, link_path))
     {
-        return link_path;
+        return std::string(link_path);
     }
 #elif defined(__APPLE__)
     uint32_t bufsize = sizeof(exe_path);
