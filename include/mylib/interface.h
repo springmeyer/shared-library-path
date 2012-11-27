@@ -14,10 +14,11 @@ class Message {
  private:
     std::string m_data;
 };
-};
 
-void here();
+void anchor();
 
 std::string get_lib_dir(const char *argv0, void *MainAddr);
+
+};
 
 #endif  // INCLUDE_MYLIB_INTERFACE_H_

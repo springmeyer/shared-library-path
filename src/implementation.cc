@@ -20,9 +20,9 @@
 
 static const int MAXPATHLEN = 1024;
 
-void here() {}
-
 namespace MyLib {
+
+void anchor() {}
 
 Message::Message(std::string const& data)
     : m_data(data) {}
@@ -35,10 +35,8 @@ void Message::set(std::string const& data) {
     m_data = data;
 }
 
-};
-
 // /llvm/lib/Support/Unix/Path.inc
-std::string get_lib_dir(const char *argv0, void *MainAddr)
+std::string get_lib_dir(const char *library_name, void *MainAddr)
 {
     char exe_path[MAXPATHLEN];
 
@@ -69,7 +67,7 @@ std::string get_lib_dir(const char *argv0, void *MainAddr)
     }
 #elif defined(__FreeBSD__) || defined (__NetBSD__) || \
       defined(__OpenBSD__) || defined(__minix)
-    if (getprogpath(exe_path, argv0) != NULL)
+    if (getprogpath(exe_path, library_name) != NULL)
     {
       return std::string(exe_path);
     }
@@ -87,4 +85,6 @@ std::string get_lib_dir(const char *argv0, void *MainAddr)
 #endif
   return "";
 }
+
+};
 
